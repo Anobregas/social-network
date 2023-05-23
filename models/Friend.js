@@ -1,8 +1,8 @@
-const { Schema, model, Types } = require('mongoose');
+const { Schema, Types } = require('mongoose');
 // Schema to create Post model
 const friendSchema = new Schema(
   {
-    reactionId: {
+    friendId: {
       type: Schema.Types.ObjectId,
       default: () => new Types.ObjectId(),
     },
@@ -16,10 +16,9 @@ const friendSchema = new Schema(
         ref: 'user',
       },
     ],
-    reactionBody: {
+    FriendBody: {
       type: String,
       minLength: 0,
-      maxLength: 280,
     },
   },
   {
@@ -31,7 +30,5 @@ const friendSchema = new Schema(
 );
 
 
-const Reaction = model('reaction', reactionSchema);
 
-
-module.exports = Reaction;
+module.exports = friendSchema;

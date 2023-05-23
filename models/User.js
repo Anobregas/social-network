@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const friendSchema = require('./friend');
 var validateEmail = function(email) {
   var validate = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   return validate.test(email)
@@ -26,10 +27,7 @@ const userSchema = new Schema(
             },
         ],
         friends: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'user',
-            },
+         friendSchema
         ],
 
     },

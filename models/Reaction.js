@@ -1,4 +1,4 @@
-const { Schema, model, Types } = require('mongoose');
+const { Schema, Types } = require('mongoose');
 // Schema to create Post model
 const reactionSchema = new Schema(
   {
@@ -31,7 +31,7 @@ const reactionSchema = new Schema(
 );
 
 
-const Reaction = model('reaction', reactionSchema);
 
 
-module.exports = Reaction;
+module.exports = reactionSchema;
+

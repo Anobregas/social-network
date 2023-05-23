@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const reactionSchema = require("./Reaction")
 
 // Schema to create Thougt Model
 const thoughtSchema = new Schema(
@@ -19,9 +20,7 @@ const thoughtSchema = new Schema(
             required: true,
         },
         reactions: [
-            {
-            //Array of nested documents created with the reactionSchema
-            },
+            reactionSchema
         ],
     },
     {
